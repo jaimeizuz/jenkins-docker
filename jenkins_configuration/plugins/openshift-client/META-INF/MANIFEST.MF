@@ -1,0 +1,31 @@
+Manifest-Version: 1.0
+Created-By: Maven Archiver 3.6.0
+Build-Jdk-Spec: 11
+Specification-Title: OpenShift Client Jenkins Plugin
+Specification-Version: 0.0
+Specification-Vendor: Red Hat
+Implementation-Title: OpenShift Client Jenkins Plugin
+Implementation-Version: 1.1.0.420.v8817277c1990
+Implementation-Vendor: Red Hat
+Group-Id: com.openshift.jenkins.plugins
+Artifact-Id: openshift-client
+Short-Name: openshift-client
+Long-Name: OpenShift Client Jenkins Plugin
+Url: https://plugins.jenkins.io/openshift-client/
+Plugin-Version: 1.1.0.420.v8817277c1990
+Hudson-Version: 2.401.1
+Jenkins-Version: 2.401.1
+PluginFirstClassLoader: true
+Plugin-Dependencies: workflow-cps:3673.v5b_dd74276262,workflow-step-api:
+ 639.v6eca_cd8c04a_a_,credentials:1254.vb_96f366e7b_a_d,script-security:
+ 1251.vfe552ed55f8d
+Plugin-Developers: 
+Plugin-License-Name: Apache License, Version 2.0
+Plugin-License-Url: https://www.apache.org/licenses/LICENSE-2.0.txt
+Plugin-ScmConnection: scm:git:https://github.com/jenkinsci/openshift-cli
+ ent-plugin.git
+Plugin-ScmTag: 8817277c1990e8208b6231972fdca16c4a473b5e
+Plugin-ScmUrl: https://github.com/jenkinsci/openshift-client-plugin/
+Plugin-GitHash: 8817277c1990e8208b6231972fdca16c4a473b5e
+Implementation-Build: 8817277c1990e8208b6231972fdca16c4a473b5e
+
