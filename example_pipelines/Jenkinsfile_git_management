@@ -1,0 +1,35 @@
+// See https://stackoverflow.com/questions/38769976/is-it-possible-to-git-merge-push-using-jenkins-pipeline
+
+/////////////////////// SSH
+git url: "ssh://jenkins@your-git-repo:12345/your-git-project.git",
+    credentialsId: 'jenkins_ssh_key',
+    branch: develop
+
+sh 'git tag -a tagName -m "Your tag comment"'
+sh 'git merge develop'
+sh 'git commit -am "Merged develop branch to master'
+sh "git push origin master"
+
+/////////////////////// HTTPS
+sh 'git config --global credential.helper cache'
+sh 'git config --global push.default simple'
+
+checkout([
+    $class: 'GitSCM',
+    branches: [[name: branch]],
+    extensions: [
+        [$class: 'CloneOption', noTags: true, reference: '', shallow: true]
+    ],
+    submoduleCfg: [],
+    userRemoteConfigs: [
+        [ credentialsId: 'bitbucketUsernamePassword', url: cloneUrl]
+    ]
+])
+sh "git checkout ${branch}" //To get a local branch tracking remote
+
+///////////////////////////// withCredentials
+withCredentials([usernamePassword(credentialsId: 'fixed',
+                 usernameVariable: 'username',
+                 passwordVariable: 'password')]){
+    sh("git push http://$username:$password@git.corp.mycompany.com/repo")
+}

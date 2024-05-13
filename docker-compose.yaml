@@ -2,7 +2,7 @@ version: '3.8'
 
 services:
   jenkins-controller:
-    image: jizuzquiza/jenkins:2.413-jdk17_docker
+    image: jizuzquiza/jenkins:alpine3.18-jdk17
     privileged: true
     user: root
     ports:

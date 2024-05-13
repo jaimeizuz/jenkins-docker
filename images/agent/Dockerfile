@@ -1,1 +1,1 @@
-FROM jenkins/ssh-agent:5.6.3-jdk17
+FROM jenkins/ssh-agent:5.34.0-jdk21
